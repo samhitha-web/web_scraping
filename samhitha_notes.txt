@@ -530,3 +530,63 @@ identity = headers + cookies + IP + TLS
 
 ---------------------------------------------------------------
 
+
+
+
+
+
+
+
+
+
+SELENIUM
+date : 13/02/2026
+
+Selenium is a browser automation tool.
+It is not just one single tool, it is a project with multiple components.
+
+Main purpose: automate web browsers.
+It can open browser, click buttons, type text, scroll, submit forms etc.
+Works like a real user using the browser.
+
+Core part of Selenium is WebDriver.
+WebDriver sends instructions to the browser.
+It follows W3C standard so same code works for Chrome, Firefox, Edge etc.
+
+Basic flow understood:
+create driver
+open browser
+go to website
+perform actions
+close browser
+
+Selenium is useful when websites are dynamic and use a lot of JavaScript.
+Requests library cannot handle JavaScript execution, but Selenium can because it controls real browser.
+
+Main components:
+
+WebDriver
+Main automation engine.
+Controls browser natively.
+
+Selenium IDE
+Browser extension.
+Records user actions.
+Good for beginners to learn commands.
+
+Selenium Grid
+Used to run tests on multiple machines and browsers.
+Helpful for large scale testing.
+
+Selenium Manager
+Automatically manages browser drivers.
+No need to manually download drivers in most cases.
+
+Difference from requests:
+requests works at HTTP level.
+Selenium works at browser level.
+Selenium is slower but more powerful for dynamic sites.
+
+Overall understanding:
+Selenium is mainly used for browser automation and testing.
+Also helpful in scraping when site is heavily dynamic.
