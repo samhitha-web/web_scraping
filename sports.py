@@ -16,4 +16,5 @@ soup = BeautifulSoup(r.text, "html.parser")
 
 text = soup.get_text("\n")
 
+print(text)
 
