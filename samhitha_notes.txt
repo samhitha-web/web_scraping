@@ -590,3 +590,38 @@ Selenium is slower but more powerful for dynamic sites.
 Overall understanding:
 Selenium is mainly used for browser automation and testing.
 Also helpful in scraping when site is heavily dynamic.
+
+
+
+
+SELENIUM
+date : 17/02/2026
+
+Installation basics understood.
+
+Install using:
+pip install selenium
+
+Python 3.5+ supported.
+
+Driver required to control browser.
+Chrome → chromedriver
+Firefox → geckodriver
+
+Driver must be in PATH.
+Otherwise error comes.
+
+From Selenium 4.6+
+Selenium Manager handles driver automatically.
+No need manual driver download in many cases.
+
+Selenium Server only needed for remote WebDriver.
+Not required for basic local automation.
+
+Basic setup idea clear:
+install selenium
+install / auto manage driver
+write script
+run python file
+
+Simple environment setup done.
