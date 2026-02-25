@@ -625,3 +625,139 @@ write script
 run python file
 
 Simple environment setup done.
+
+
+
+
+SELENIUM – PRACTICAL
+date : 25/02/2026
+
+Topics done:
+Navigating using get()
+Locating single elements
+Interacting with webpage
+send_keys
+Keys.RETURN
+maximize window
+basic waits
+simple automation scripts
+
+=====================================================================
+
+Navigation using get()
+
+driver.get("url")
+opens the website
+
+used books.toscrape.com
+browser opened successfully
+
+understood that Selenium controls real browser
+
+basic script:
+
+create driver
+get website
+wait
+quit
+
+tested this in books example 
+
+selinium
+
+Locating single elements
+
+used driver.find_element()
+
+important concept:
+need to tell Selenium how to locate element
+
+used By.XPATH
+
+example:
+
+driver.find_element(By.XPATH, "...")
+
+can also use:
+By.ID
+By.NAME
+By.CLASS_NAME
+By.TAG_NAME
+By.CSS_SELECTOR
+
+but practiced mainly XPATH
+
+Interacting with webpage
+
+after locating element
+
+can:
+.click()
+.send_keys()
+.clear()
+
+in geeksforgeeks example: 
+
+seltesting
+
+found search input box
+entered text
+pressed Enter
+
+used:
+
+enterText.send_keys("Data Structure")
+enterText.send_keys(Keys.RETURN)
+
+understood that Keys.RETURN simulates pressing Enter
+
+Maximize window
+
+driver.maximize_window()
+
+makes browser full screen
+
+not compulsory
+but useful
+
+Wait understanding
+
+used time.sleep()
+
+not best practice
+but easy for learning
+
+waits help page load before next action
+
+later need to learn:
+WebDriverWait
+expected_conditions
+
+Overall understanding
+
+Selenium can:
+open browser
+find element
+interact with it
+
+automation flow clear
+
+browser automation feels like controlling mouse + keyboard via code
+
+difference from requests very clear now
+
+requests → only fetch html
+selenium → actually renders page + executes javascript
+
+From oxylabs/Web-Scraping-With-Selenium repo
+
+understood structure of selenium scraping project
+
+flow usually:
+
+open browser
+wait for page load
+locate elements
+extract text
+store data
+
