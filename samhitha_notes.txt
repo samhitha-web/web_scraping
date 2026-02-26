@@ -605,8 +605,8 @@ pip install selenium
 Python 3.5+ supported.
 
 Driver required to control browser.
-Chrome → chromedriver
-Firefox → geckodriver
+Chrome : chromedriver
+Firefox : geckodriver
 
 Driver must be in PATH.
 Otherwise error comes.
@@ -746,8 +746,8 @@ browser automation feels like controlling mouse + keyboard via code
 
 difference from requests very clear now
 
-requests → only fetch html
-selenium → actually renders page + executes javascript
+requests : only fetch html
+selenium : actually renders page + executes javascript
 
 From oxylabs/Web-Scraping-With-Selenium repo
 
@@ -761,3 +761,118 @@ locate elements
 extract text
 store data
 
+
+
+
+SELENIUM – LOCATING ELEMENTS
+date : 26/02/2026
+
+Topics done:
+Locating single elements
+Locating multiple elements
+find_element vs find_elements
+Different locator strategies
+
+=====================================================================
+
+Locating Single Elements
+
+used driver.find_element()
+
+syntax pattern:
+
+driver.find_element(By.TYPE, "value")
+
+important:
+old find_element_by_* is deprecated
+now use By class
+
+from selenium.webdriver.common.by import By
+
+Different locator strategies
+
+By.ID
+find element using id attribute
+
+By.NAME
+find element using name attribute
+
+By.XPATH
+find element using xpath expression
+
+By.LINK_TEXT
+exact text of link
+
+By.PARTIAL_LINK_TEXT
+part of link text
+
+By.TAG_NAME
+using html tag
+
+By.CLASS_NAME
+using class attribute
+
+By.CSS_SELECTOR
+using css pattern
+
+if element not found : NoSuchElementException
+
+Understanding single element
+
+find_element : returns first matching element
+
+if multiple elements match
+only first one returned
+
+Locating Multiple Elements
+
+used driver.find_elements()
+
+syntax:
+
+driver.find_elements(By.TYPE, "value")
+
+difference:
+returns list of elements
+
+even if one match
+still returns list
+
+if no match
+returns empty list (no error)
+
+Difference summary
+
+find_element : single element
+find_elements : list of elements
+
+find_element : error if not found
+find_elements : empty list if not found
+
+XPath understanding
+
+absolute xpath : full path
+/html/body/...
+
+relative xpath : starts with //
+//form[1]
+
+relative preferred
+
+CSS Selector understanding
+
+similar to CSS in frontend
+
+example:
+p.content
+
+shorter and cleaner than xpath sometimes
+
+Overall understanding
+
+locators are most important part of selenium
+
+without correct locator
+automation fails
+
+need to inspect element carefully
