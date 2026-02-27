@@ -876,3 +876,164 @@ without correct locator
 automation fails
 
 need to inspect element carefully
+
+
+
+SELENIUM – WAITS & ADVANCED LOCATORS
+date : 27/02/2026
+
+Topics done:
+Implicit wait
+Explicit wait
+Race condition concept
+Relative locators
+Finding elements in DOM
+Finding elements inside parent
+Shadow DOM basic idea
+Active element
+
+=====================================================================
+
+Waiting problem understood
+
+browser and selenium sometimes race
+page not ready but code runs
+causes flaky tests
+
+readyState only waits for html load
+javascript may still change page
+
+dynamic elements appear after delay
+so normal click may fail
+
+sleep() not good solution
+fixed time
+may be too less or too much
+
+Implicit Wait
+
+global wait
+applies to entire session
+
+driver.implicitly_wait(seconds)
+
+if element not found
+driver waits till timeout
+
+default is 0
+
+once element found
+execution continues
+
+warning:
+do not mix implicit and explicit waits
+
+Explicit Wait
+
+wait for specific condition
+
+uses WebDriverWait
+
+example idea:
+
+wait.until(condition)
+
+more precise
+better than sleep
+
+can wait for:
+element visible
+element clickable
+custom condition
+
+Customization in waits
+
+can change:
+polling frequency
+ignored exceptions
+timeout length
+
+explicit wait more flexible
+
+Locator strategies revision
+
+8 traditional locators:
+
+id
+name
+class name
+css selector
+xpath
+tag name
+link text
+partial link text
+
+id and css preferred
+avoid long absolute xpath
+
+Relative Locators (Selenium 4 feature)
+
+used when element hard to locate
+but position relative to other element known
+
+methods:
+
+above()
+below()
+to_left_of()
+to_right_of()
+near()
+
+uses getBoundingClientRect internally
+
+can chain relative locators
+
+Finding elements deeper
+
+find_element → first match
+find_elements → list
+
+can search inside parent element
+
+example concept:
+
+parent = driver.find_element(...)
+child = parent.find_element(...)
+
+limits search to that section
+
+Evaluating entire DOM
+
+driver.find_element searches whole DOM
+
+if multiple matches
+first one returned
+
+Shadow DOM
+
+some elements hidden inside shadow root
+
+need Selenium 4
+
+shadow_host.shadow_root
+
+then search inside
+
+Get Active Element
+
+driver.switch_to.active_element
+
+returns currently focused element
+
+useful for keyboard automation
+
+Overall understanding
+
+major causes of selenium errors =
+element not ready
+element not visible
+dynamic loading
+
+proper wait usage is very important
+
+locators + waits = core stability of selenium scripts
